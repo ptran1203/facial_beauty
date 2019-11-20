@@ -69,70 +69,33 @@ class AlexNet:
                       metrics=['accuracy'])
         self.model = model
 
-    def model(self):
-        return self.model
+if __name__ == "__main__":
+    train_datagen = ImageDataGenerator(rescale=1./255)
+    test_datagen = ImageDataGenerator(rescale=1./255)
+
+    train_df, test_df = dp.split(dp.dataframe(), 0.7)
+
+    train_generator = train_datagen.flow_from_dataframe(
+            dataframe=train_df,
+            directory='dataset/images',
+            x_col="filename",
+            y_col="score",
+            target_size=(227, 227),
+            class_mode='sparse')
 
 
-def log(msg):
-    print("[INFO]: " + msg)
-
-
-log('start')
-train_datagen = ImageDataGenerator(rescale=1./255)
-test_datagen = ImageDataGenerator(rescale=1./255)
-
-log('Create dataframe')
-
-train_df, test_df = dp.split(dp.dataframe(), 0.7)
-
-train_generator = train_datagen.flow_from_dataframe(
-        dataframe=train_df,
-        directory='dataset/images',
-        x_col="filename",
-        y_col="score",
-        target_size=(227, 227),
-        class_mode='sparse')
-
-# print(train_df)
-# exit(0)
-validation_generator = test_datagen.flow_from_dataframe(
-        dataframe=test_df,
-        directory='dataset/images',
-        x_col="filename",
-        y_col="score",
-        target_size=(227, 227),
-        class_mode='sparse')
-
-log('init model')
-
-alax = AlexNet()
-model = alax.model
-
-log('fit model')
-
-model.fit_generator(
-        train_generator,
-        steps_per_epoch=2000,
-        epochs=50,
-        validation_data=validation_generator,
-        validation_steps=800)
-
-
-
-model_json = model.to_json()
-
-with open("model.json", "w") as json_file:
-    json_file.write(model_json)
-
-model.save_weights("model.h5")
-print("Saved model to disk")
-
-
-# load json and create model
-json_file = open('model.json', 'r')
-loaded_model_json = json_file.read()
-json_file.close()
-loaded_model = model_from_json(loaded_model_json)
-# load weights into new model
-loaded_model.load_weights("model.h5")
-print("Loaded model from disk")
+    validation_generator = test_datagen.flow_from_dataframe(
+            dataframe=test_df,
+            directory='dataset/images',
+            x_col="filename",
+            y_col="score",
+            target_size=(227, 227),
+            class_mode='sparse')
+    alex_net = AlexNet()
+    model = alex_net.model
+    model.fit_generator(
+            train_generator,
+            steps_per_epoch=2000,
+            epochs=50,
+            validation_data=validation_generator,
+            validation_steps=800)
