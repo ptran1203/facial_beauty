@@ -1,0 +1,7 @@
+tensorflow==1.15.0
+pandas==0.25.3
+Pillow==6.2.1
+numpy==1.17.4
+opencv-python==4.1.1.26
+Keras==2.2.5
+h5py==2.10.0
