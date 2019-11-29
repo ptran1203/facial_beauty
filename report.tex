@@ -1,0 +1,134 @@
+\documentclass{FR16} 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+%\usepackage[ruled,vlined]{algorithm2e}
+%\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+%\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmicrequire}{\textbf{Đầu vào:}}
+\renewcommand{\algorithmicensure}{\textbf{Đầu ra:}}
+%\renewcommand{\algorithmcfname}{\textbf{MegaAlgorithm}}
+\makeatletter
+\newenvironment{megaalgorithm}[1][htb]{%
+    \renewcommand{\ALG@name}{\textbf{Thuật toán}}% Update algorithm name
+   \begin{algorithm}[#1]%
+  }{\end{algorithm}}
+  
+\begin{document}
+
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Giới thiệu}
+Trong phần này chúng ta sẽ giới thiệu về bài toán và tầm quan trọng của bài toán.
+\subsection{Mô tả bài toán}
+Giới thiệu bài toán, input là gì, output của bài toán là gì ?
+
+\subsection{Tầm quan trọng của bài toán}
+Tại sao chúng ta làm bài toán này, bài toán có tầm quan trọng như thế nào ?
+
+\subsection{Những điểm nổi bật của phương pháp}
+Phương pháp của mình có những điểm nổi bật gì, điểm khác gì so với các phương pháp khác, kết quả của mình có gì vượt trội.
+
+\newpage
+
+\section{Các nghiên cứu liên quan}
+Phần này trình bày những phương pháp liên quan \cite{baibao1}, \cite{baibao2} đã được đề xuất để giải quyết bài toán, chúng có ưu điểm gì và đặc biệt chúng ta cần xác định hạn chế của phương pháp là gì (tập trung vào điểm mà phương pháp mình tốt hơn).
+
+\newpage
+\section{Phương pháp đề xuất}
+Phần này sẽ trình bày chi tiết về phương pháp đề xuất để giải quyết bài toán.
+\newpage
+Nội dung trình bày trong công thức \ref{eq:congthuc1}.
+
+\begin{equation}
+	R_{N \times C} = P_{N \times L} Q_{L \times C}
+	\label{eq:congthuc1}
+\end{equation}
+
+\newpage
+Mô tả thuật toán \ref{alg:thuattoan1}.
+
+\begin{megaalgorithm}
+  	\caption{$[G, Q] = Training(\mathcal{V}, R_{N \times C}, L)$: Tên thuật toán}\label{alg:thuattoan1}
+  	\begin{algorithmic}[1]
+  	\show\LOOP
+  		\Require { \\   
+  		$\mathcal{V}$: Input số 1; \\
+  		$R_{N \times C}$: Input số 1;
+  		}
+  		\Ensure {\\  
+  		$G={g_1,..,g_L}$: Output số 1;\\
+		Ma trận $Q$: Output số 2 ;		
+  		}
+  		\State \textbf{Bước 1:} Nội dung bước 1.
+  		\State \textbf{Bước 2:} Nội dung bước 2.
+
+	\end{algorithmic}
+\end{megaalgorithm}
+
+
+\newpage
+\section{Thực nghiệm}
+Phần này trình bày về quá trình tiến hành thực nghiệm
+\subsection{Tập dữ liệu}
+Việc phân chia tập dữ liệu thế nào: train, test, validation,...
+\subsection{Thiết lập thực nghiệm}
+Quá trình thực nghiệm tiến hành ra sao, tham số như thế nào, chạy trên máy có cấu hình ra sao,...
+\subsection{Kết quả thực nghiệm}
+Liệt kê các kết quả thực nghiệm, có thể dụng Table \ref{tab:bang1}, Figure \ref{fig:hinh1},... Sau mỗi kết quả, chúng ta có nhận định như thế nào về kết quả,...
+
+\begin{table}[]
+    \centering
+
+    \begin{tabular}{l c c c c c c c c c}
+    \arrayrulecolor{Azzurro}
+    \hline
+    {\bfseries Periodo} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & Media\\
+    \hline
+    {\bfseries MPS} & 250 & 250 & 250 & 250 & 250 & 250 & 250 & 250 & \\
+    {\bfseries CdL 1} & 262,5 & 262,5 & 262,5 & 262,5 & 262,5 & 262,5 & 262,5 & 262,5 & 262,5\\
+    {\bfseries CdL 2} & 1165 & 1165 & 1165 & 1165 & 1165 & 1165 & 1165 & 1165 & 1165\\
+    {\bfseries CdL 3} & 1420 & 1420 & 1420 & 1420 & 1420 & 1420 & 1420 & 1420 & 1420\\
+    {\bfseries CdL 4} & 150 & 150 & 150 & 150 & 150 & 150 & 150 & 150 & 150\\
+    \hline
+    \end{tabular}
+    \caption{Bảng số liệu 1}
+    \label{tab:bang1}
+\end{table}
+
+\newpage
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{grafo.png}
+    \caption{Mô tả hình 1}
+    \label{fig:hinh1}
+\end{figure}
+
+\subsection{Thảo luận}
+Những nhận định về kết quả thực nghiệm của phương pháp.
+
+\newpage
+
+\section{Kết luận và Hướng phát triển}
+Tóm tắt lại bài toán và kết quả của phương pháp.
+
+Hướng phát triển tiếp theo.
+ \cite{baibao2}.
+ 
+\newpage
+\begin{thebibliography}{9}
+\bibitem{baibao1}
+Tác giả, \emph{Tên bài báo 1}. Nơi đăng
+
+\bibitem{baibao2}
+Tác giả, \emph{Tên bài báo 2}. Nơi đăng
+
+
+
+\end{thebibliography}
+
+\end{document}

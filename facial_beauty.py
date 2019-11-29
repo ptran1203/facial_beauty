@@ -5,6 +5,7 @@ import numpy as np
 import time
 import urllib.request
 import cv2
+import matplotlib.pyplot as plt
 
 
 def get_model():
@@ -46,8 +47,6 @@ def predict(img_path):
     img = np.expand_dims(img, axis=0)
 
     return MODEL.predict(img)[0][0]
-
-
 
 # img_path = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMxRw96-QdObv0SflMIXVmLhFT-QgX4SPURqU4qY_h4FK6w2nL8w&s'
 # now = time.time()
