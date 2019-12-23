@@ -12,3 +12,6 @@ Implementation using AlexNet as discussed in https://arxiv.org/pdf/1801.06345.pd
 ## Results
 ![result 1](https://raw.githubusercontent.com/ptran1203/facial_beauty/master/result/images/result1.PNG)
 s
+
+![result 2](https://raw.githubusercontent.com/ptran1203/facial_beauty/master/result/images/result2.PNG)
+s
